@@ -4,14 +4,14 @@ import java.util.*;
 
 
 /**
- * Created by Alexander on 05.02.2017.
+ * Created by Korolev on 05.02.2017.
  */
-public class Main {
+public class PriceUpdateUtil {
 
     public static Map<String, List<Price>> convertListToMap(List<Price> list) {
         Map<String, List<Price>> map = new HashMap<>();
         for (Price p : list) {
-            if (p == null) {
+            if(p==null){
                 continue;
             }
             if (!map.containsKey(p.getProduct_code())) {
@@ -29,7 +29,7 @@ public class Main {
 
 
     public static List<Price> updatePrices(List<Price> oldPrices, List<Price> newPrices) throws Exception {
-        if (oldPrices == null || newPrices == null || oldPrices.isEmpty() || newPrices.isEmpty()) {
+        if(oldPrices==null||newPrices==null||oldPrices.isEmpty()||newPrices.isEmpty()){
             throw new NullInputDataException("The can be no null input data");
         }
         Map<String, List<Price>> oldPricesMap = convertListToMap(oldPrices);

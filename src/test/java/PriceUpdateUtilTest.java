@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Alexander on 05.02.2017.
  */
 
-public class MainTest {
+public class PriceUpdateUtilTest {
     private static List<Price> oldPrices;
     private static List<Price> newPrices;
     private static List<Price> updatedPrices;
@@ -45,7 +45,7 @@ public class MainTest {
 
     @Test
     public void updatePricesTest() throws Exception {
-        ListAssert.assertEquals(updatedPrices, Main.updatePrices(oldPrices, newPrices));
+        ListAssert.assertEquals(updatedPrices, PriceUpdateUtil.updatePrices(oldPrices, newPrices));
 
     }
 
